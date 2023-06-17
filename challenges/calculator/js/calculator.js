@@ -1,11 +1,4 @@
 
-// import {
-//     OperationContext,
-//     PlusOperation,
-//     MinusOperation,
-//     MultiplicationOperation,
-//     DivisionOperation
-// } from './strategy'
 const OPERATORS = {
     plus: '+',
     minus: '-',
@@ -25,7 +18,7 @@ class OperationContext {
         this.strategy = strategy
     }
 
-    calulate(num1, num2) {
+    calculate(num1, num2) {
         return this.strategy.calculate(num1, num2)
     }
 }
@@ -99,7 +92,7 @@ function calculateResult(numbersArr, operatorArr) {
             [OPERATORS.multiplication]: new OperationContext(new MultiplicationOperation()),
             [OPERATORS.division]: new OperationContext(new DivisionOperation()),
         }, chooseOperation(operatorArr))
-        answer = operationContextStrategy.calulate(numbersArr[0], numbersArr[1])
+        answer = operationContextStrategy.calculate(numbersArr[0], numbersArr[1])
         numbersArr = [answer, ...numbersArr.slice(2)];
         operatorArr.shift()
     }
