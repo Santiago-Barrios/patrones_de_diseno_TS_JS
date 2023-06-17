@@ -1,0 +1,21 @@
+
+.calculator__container {
+    background-color: burlywood;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input {
+    width: 193px;
+}
+
+.calculator__buttons {
+    width: 200px; 
+    height: 200px; 
+    background-color: #ccc;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
